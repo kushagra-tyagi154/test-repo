@@ -20,4 +20,4 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@your-ec2-ip-address 'cd /path/to/your/repo && git pull origin main && sudo systemctl restart your-app-service'
+          ssh -o StrictHostKeyChecking=no ubuntu@18.188.122.216 'cd home/ubuntu/test-repo && git pull origin main && sudo systemctl restart your-app-service'
