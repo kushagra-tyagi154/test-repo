@@ -19,4 +19,4 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@18.188.122.216 "cd /home/ubuntu/project && git pull origin main"
+          ssh -o StrictHostKeyChecking=no ubuntu@18.226.133.158 "cd /home/ubuntu/test-repo && git pull origin main"
