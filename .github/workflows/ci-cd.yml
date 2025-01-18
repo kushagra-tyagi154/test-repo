@@ -1,26 +1,22 @@
-name: Deploy to EC2
-
+name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main
+      - main  # Trigger this action on pushes to the main branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Deploy to EC2
-      run: |
-        ssh -o StrictHostKeyChecking=no ubuntu@18.188.122.216 << 'EOF'
-          cd /home/ubuntu/test-repo
-          git pull origin main
-        EOF
+      - name: Deploy to server
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@18.188.122.216 "cd /home/ubuntu/project && git pull origin main"
