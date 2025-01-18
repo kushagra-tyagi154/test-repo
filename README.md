@@ -2,5 +2,5 @@
 # Test Repo
 Testing GitHub Actions deployment
 
-## new Update
-This is a new test update to check the automation.
+## my Update
+This is a my test update to check the automation.
