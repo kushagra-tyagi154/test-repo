@@ -2,5 +2,5 @@
 # Test Repo
 Testing GitHub Actions deployment
 
-## lateste Update
-This is a latest test update to check the automation.
+## final Update
+This is a final test update to check the automation.
